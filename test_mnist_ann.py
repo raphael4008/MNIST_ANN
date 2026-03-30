@@ -162,7 +162,7 @@ class TestNeuralNetworkValidation:
         # Random predictions (uniform softmax)
         Y_hat_uniform = np.ones((10, 10), dtype=np.float32) / 10
         loss_uniform = nn.cross_entropy_loss(Y_hat_uniform, Y_perfect)
-        expected_uniform_loss = -np.log(0.1) * (1/10)  # ~2.3
+        expected_uniform_loss = -np.log(0.1)  # ~2.3026
         assert abs(loss_uniform - expected_uniform_loss) < 0.1, "Uniform loss incorrect"
         print(f"✅ Uniform predictions loss: {loss_uniform:.4f} (expected ~2.3)")
         
